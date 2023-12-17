@@ -12,8 +12,8 @@
     <title>FeedBacks - LCX DevWeb</title>
 </head>
 <body>
-    <header>
-        <div class="content">
+    <header class="main-head head-nav-below simple simple-boxed has-search-overlay">
+        <div class="inner inner-head ts-contain">
 
             <div class="logo">
                 <img src="imagens/lcx450.png" alt="logo-lcx">
@@ -25,7 +25,7 @@
                     <ul id="primeira-lista">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Contatos</a></li>
+                        <li><a href="#">Contato</a></li>
                     </ul>
                 </nav>
             </div>
@@ -44,13 +44,69 @@
         </div>
     </header>
 
-    <main class="parte-principal">
+    <main class="main-content">
 
-        <div class="conteudo">
-            <header class="cabecalho-doform">
+        <article class="post-area">
+            <header class="post-header">
                 <h1>Fale conosco</h1>
             </header>
-        </div>
+
+            <div class="post-content">
+                <p>O seu contato é muito importante para nós!</p>
+                <p>Preencha o formulário abaixo que em até 48 horas responderemos sua solicitação.</p>
+
+                <div class="contat-form" id="main-post-content-form">
+                    <form action="/contato/#main-post-content-form" class="form-init" method="post">
+
+                        <p>
+                            <label>
+                                Nome:
+                                <br>
+                                <span class="form-control-wrap">
+                                    <input size="40" class="form-control" aria-required="true" value type="text" name="your-name" id="">
+                                </span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                E-mail:
+                                <br>
+                                <span class="form-control-wrap">
+                                    <input size="40" class="form-control" aria-required="true" value type="email" name="your-email" id="">
+                                </span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                Assunto
+                                <br>
+                                <span class="form-control-wrap">
+                                    <input size="40" class="form-control" aria-required="true" value type="text" name="your-subject">
+                                </span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                Mensagem:
+                                <br>
+                                <span class="form-control-wrap">
+                                    <textarea name="your-message" class="form-control" aria-invalid="false" cols="40" rows="10"></textarea>
+                                </span>
+                            </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input class="form-control" type="submit" value="Enviar">
+                            </label>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </article>
 
     </main>
 </body>

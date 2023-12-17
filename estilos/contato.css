@@ -6,9 +6,114 @@
  --lilas-claro: #A904BF;
 }
 
-/* Menu */
+:root {
+    --base-aa: antialiased;
+    --main-color: #07a3cc;
+    --main-color-rgb: 7, 163, 204;
+    --main-width: 1170px;
+    --wrap-padding: 35px;
+    --grid-gutter: 30px;
+    --body-font: IBM Plex Sans, system-ui, -apple-system, Segoe UI, sans-serif;
+    --ui-font: var(--body-font);
+    --text-font: var(--body-font);
+    --title-font: var(--ui-font);
+    --h-font: var(--ui-font);
+    --blockquote-font: Lora, Georgia, serif;
+    --text-color: #303030;
+    --text-tracking: 0;
+    --text-size: 14px;
+    --text-lh: 1.8;
+    --black-900: #000;
+    --black-800: #161616;
+    --black-700: #333;
+    --black-color: var(--black-700);
+    --share-icons-color: var(--black-color);
+    --topbar-height: 52px;
+    --topbar-social-color: var(--share-icons-color);
+    --nav-items-space: 20px;
+    --nav-active-color: var(--main-color);
+    --nav-hover-color: var(--nav-active-color);
+    --nav-drop-active-color: var(--nav-active-color);
+    --nav-blip-color: #a0a0a0;
+    --nav-blip-hover-color: var(--nav-hover-color);
+    --nav-drop-shadow: 0 2px 3px -1px rgba(0,0,0,.08), 0px 4px 11px -2px rgba(0,0,0,.06);
+    --title-size-xs: 14px;
+    --title-size-s: 16px;
+    --title-size-n: 17px;
+    --title-size-m: 19px;
+    --title-size-l: 24px;
+    --title-size-xl: 28px;
+    --post-title-size: var(--title-size-l);
+    --large-post-title: var(--post-title-size);
+    --grid-post-title: var(--title-size-m);
+    --grid-post-title-c2: var(--grid-post-title);
+    --grid-post-title-c3: var(--grid-post-title);
+    --list-post-title: var(--title-size-m);
+    --list-post-title-b: var(--title-size-m);
+    --overlay-post-title: var(--title-size-l);
+    --carousel-post-title: calc(var(--title-size-n) + 1px);
+    --w-posts-title-large: var(--title-size-s);
+    --excerpt-size: var(--text-size);
+    --single-content-size: 15px;
+    --single-title-size: 26px;
+    --post-content-size: var(--single-content-size);
+    --p-media-margin: 2em;
+    --related-posts-title: var(--title-size-s);
+    --related-posts-2-title: var(--title-size-n);
+    --block-head-bc: #ebebeb;
+    --block-head-bw: 1px;
+    --feat-grid-title-s: var(--title-size-n);
+    --feat-grid-title-m: calc(var(--title-size-m) * 1.10526);
+    --feat-grid-title-l: var(--title-size-xl);
+    --rmore-btn-fs: 11px;
+    --widget-boxed-pad: 30px
+}
 
-.content {
+/* Menu */
+.main-head {
+    border-bottom: 1px solid #ebebeb
+}
+
+.main-head.simple-boxed {
+    border-top: 3px solid #090909;
+    --head-inner-height: 106px
+}
+
+.main-head .inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: var(--head-inner-height,initial);
+    min-height: var(--head-inner-height,initial);
+    box-sizing: border-box
+}
+
+.main-head .parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1
+}
+
+.main-head .navigation>.wrap {
+    padding: 0
+}
+
+.main-head .logo {
+    font-family: var(--ui-font);
+    font-weight: 400;
+    font-size: inherit;
+    letter-spacing: -3px;
+    text-rendering: optimizeLegibility;
+    padding: 70px 0;
+    text-align: center
+}
+
+.main-head {
     width: 100vw;
     height: 70px;
     display: flex;
@@ -81,20 +186,57 @@
 }
 
 /* Formulario */
-.parte-principal{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    padding-left: 30rem;
+.main-content {
+    width: calc(1170px + 35px * 2);
+    margin: 0 auto;
+    margin-top: 65px;
+    margin-bottom: 100px
 }
 
-.conteudo .cabecalho-doform {
-    font-size: 1.5rem;
-    color: #000;
+.post-area .post-header{
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
+}
+
+.post-area .post-header h1 {
+    color: var(--azul-escuro);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-area .post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+}
+
+.post-area .post-content p {
+    color: var(--azul-escuro);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input,textarea {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    padding: 0 16px;
+    max-width: 100%;
+    outline: 0;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #b4b4b4
+}
+
+textarea {
+    width: 100%;
+    padding: 20px 14px;
+    line-height: 1.5;
+    box-sizing: border-box
 }
